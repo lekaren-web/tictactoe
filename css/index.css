@@ -1,0 +1,211 @@
+* {
+box-sizing: border-box;
+margin: 0;
+}
+body {
+    font-family: "Merriweather Sans", sans-serif;
+    color: rgb(0, 0, 0);
+}
+body.off{
+    background-color: Black;
+    color: white;
+}
+body.off div {
+    background-color: black;
+    color: -3;
+    border-color: white;
+}
+
+body.off .board-tile{
+    /* background-color: rgba(128, 128, 128, 0.673);
+     */
+     border-color: white;
+}
+body.off .restart:hover{
+    background-color: white;
+    color: black;
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4.8rem;
+    position: relative;
+    /* background-image: radial-gradient(rgb(92, 92, 228), rgb(51, 156, 179)); */
+    height: 101px;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%), 0 0 2px rgb(0 0 0 / 7%);
+    z-index: 10;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+    
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+.container{
+    height: 800px;
+    background-color: rgba(242, 242, 242, 0.577);
+    max-width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.restart {
+    height: 50px;
+    width: 150px;
+    display: flex;
+    /* background-color: rgb(29, 46, 12); */
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    border: 2px solid rgb(40, 51, 138);
+    transition: all 0.2s ease;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.restart:hover{
+    cursor: pointer;
+    color: white;
+    background-color: black;
+}
+
+.header {
+    display: flex;
+    color:rgb(57, 114, 116);
+    font-size: 24px;
+}
+
+.fas {
+    margin: 10px;
+    
+}
+
+.game{
+    width:500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px ;
+}
+
+.board {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(3, 1fr);
+grid-gap: 0px;
+flex-grow: 1;
+}
+
+.board-tile {
+    /* background-color: rgba(255, 255, 255, 0.646); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.509); */
+cursor: pointer;
+}
+
+.board-tile:not(:nth-child(3n))  {
+    border-right: 1px solid rgba(0, 0, 0, 0.509)
+}
+
+.board-tile:not(:nth-last-child(-n + 3)){
+border-bottom: 1px solid rgba(0, 0, 0, 0.509);
+}
+
+.header .playerx {
+    flex: 1;
+    border-bottom: 5px solid grey;
+}
+.header .playero {
+    flex: 1;
+    border-bottom: 5px solid grey;
+
+}
+
+.board-tile:hover{
+    background-color: grey;
+}
+h1 {
+        font-size: 70px;
+        font-weight: bold;
+    
+}
+
+.playero.active {
+    font-size: 30px;
+    border-color: hotpink;
+    color: hotpink;
+}
+
+.playerx.active {
+    font-size: 30px;
+
+    border-color: rgb(66, 59, 201);
+    color: rgb(66, 59, 201);
+}
+
+.board-tile.won {
+    background-color: rgba(7, 242, 132, 0.673);
+    opacity: 0.7;
+}
